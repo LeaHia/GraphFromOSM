@@ -20,8 +20,8 @@ const getOsmData = async (settings) => {
     method: 'post',
     headers: { Accept: 'application/json' },
     data: osmScript,
-    timeout: settings.timeout,
-    maxContentLength: settings.maxContentLength
+    // timeout: settings.timeout,
+    // maxContentLength: settings.maxContentLength
   })
   response.data.generatingScript = osmScript;
   return response.data;

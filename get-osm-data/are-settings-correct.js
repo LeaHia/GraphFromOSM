@@ -32,7 +32,8 @@ const printError = (message) => {
 // Tests -----------------------------------------------------------------------
 const areSettingsCorrect = (settings = {}) => {
   // Pocess right properties ---------------------------------------------------
-  if( !(settings.hasOwnProperty('bbox') && settings.hasOwnProperty('highways') && settings.hasOwnProperty('timeout') && settings.hasOwnProperty('maxContentLength')) ){
+  // if( !(settings.hasOwnProperty('bbox') && settings.hasOwnProperty('highways') && settings.hasOwnProperty('timeout') && settings.hasOwnProperty('maxContentLength')) ){
+  if( !(settings.hasOwnProperty('bbox') && settings.hasOwnProperty('highways') ) ){
     printError('Settings object should pocess properties "bbox", "highways", "timeout" and "maxContentLength".');
     return false;
   }
@@ -77,16 +78,16 @@ const areSettingsCorrect = (settings = {}) => {
   }
 
 
-  // timeout and maxContentLength are valid ------------------------------------
-  if( !(Number.isInteger(timeout) && timeout > 0) ){
-    printError("timeout should be a strictly positive integer");
-    return false;
-  }
-
-  if( !(Number.isInteger(maxContentLength) && maxContentLength > 0) ){
-    printError("maxContentLength should be a strictly positive integer");
-    return false;
-  }
+  // // timeout and maxContentLength are valid ------------------------------------
+  // if( !(Number.isInteger(timeout) && timeout > 0) ){
+  //   printError("timeout should be a strictly positive integer");
+  //   return false;
+  // }
+  //
+  // if( !(Number.isInteger(maxContentLength) && maxContentLength > 0) ){
+  //   printError("maxContentLength should be a strictly positive integer");
+  //   return false;
+  // }
 
   // All is correct :) ---------------------------------------------------------
   return true;
